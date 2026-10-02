@@ -1,4 +1,4 @@
-## 🚀 Como Executar
+## Como Executar
 
 ### 1. Pré-requisitos
 - Python 3.10+ (ou [uv](https://github.com/astral-sh/uv))
@@ -45,9 +45,9 @@ A aplicação estará acessível em: `http://127.0.0.1:5000/`
 
 ---
 
-## 🌐 Rotas Principais
+## Rotas Principais
 
-- **Loja (Pública)**: `http://127.0.0.1:5000/main/v1/` (ou redirecionamento na raiz `/`)
+- **Loja (Pública)**: `http://127.0.0.1:5000/main/v1/`
 - **API REST (Pública)**: `http://127.0.0.1:5000/api/v1/product/`
 - **Login Administrativo**: `http://127.0.0.1:5000/login`
 - **Painel Administrativo (Protegido)**: `http://127.0.0.1:5000/admin/`
