@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Login Administrativo - {{ config["TITLE"] }}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-5">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white py-3 text-center">
+                    <h4 class="mb-0 fs-5"><i class="bi bi-shield-lock me-2"></i>Acesso Administrativo</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post" novalidate>
+                        {{ form.hidden_tag() }}
+
+                        <div class="mb-3">
+                            {{ form.username.label(class="form-label fw-semibold") }}
+                            {{ form.username(class="form-control" + (" is-invalid" if form.username.errors else ""), autofocus=true, autocomplete="username", placeholder="Digite seu usuário") }}
+                            {% for error in form.username.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="mb-4">
+                            {{ form.password.label(class="form-label fw-semibold") }}
+                            {{ form.password(class="form-control" + (" is-invalid" if form.password.errors else ""), autocomplete="current-password", placeholder="Digite sua senha") }}
+                            {% for error in form.password.errors %}
+                                <div class="invalid-feedback">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Entrar
+                        </button>
+                    </form>
+                </div>
+                <div class="card-footer bg-light text-center py-2 text-muted small">
+                    Área restrita a administradores autorizados.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
